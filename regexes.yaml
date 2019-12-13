@@ -1,4 +1,12 @@
 user_agent_parsers:
+  #### START MCNEEL ####
+  # Yak
+  - regex: '(Yak)/(\d+)(?:\.(\d+)|)(?:\.(\d+)|)'
+
+  # RhinoAnalytics
+  - regex: '(RhinoAnalytics)/(\d+)\.(\d+)\.(\d+)\.(\d+)'
+  ##### END MCNEEL #####
+
   #### SPECIAL CASES TOP ####
 
   # CFNetwork Podcast catcher Applications
@@ -1510,6 +1518,11 @@ os_parsers:
   - regex: '^(Roku)/DVP-(\d+)\.(\d+)'
 
 device_parsers:
+  #### START MCNEEL ####
+  # Yak includes Rhino version - might as well add it as a "device"
+  - regex: '(Rhino)/(\d+\.\d+\.\d+\.\d+)'
+    model_replacement: $2
+  ##### END MCNEEL #####
 
   #########
   # Mobile Spiders
